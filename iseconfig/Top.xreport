@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-04-20T11:49:18</DateModified>
+  <DateModified>2022-04-20T12:43:34</DateModified>
   <ModuleName>Top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/cpere/Documents/Ingenieria en Sistemas Computacionales/CUARTOSEMESTRE/Fundamentos de Sistemas Digitales/ProyectoFinal/iseconfig/Top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/cpere/Documents/Ingenieria en Sistemas Computacionales/CUARTOSEMESTRE/Fundamentos de Sistemas Digitales/ProyectoFinal\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/cpere/Documents/Ingenieria en Sistemas Computacionales/CUARTOSEMESTRE/Fundamentos de Sistemas Digitales/ProyectoFinal/Piano-con-teclado-PS2/iseconfig/Top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/cpere/Documents/Ingenieria en Sistemas Computacionales/CUARTOSEMESTRE/Fundamentos de Sistemas Digitales/ProyectoFinal/Piano-con-teclado-PS2\</ImplementationReportsDirectory>
   <DateInitialized>2022-04-20T11:37:04</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
