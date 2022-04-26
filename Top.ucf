@@ -1,0 +1,12 @@
+NET "PS2C" LOC = "B1" | PULLUP | CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PS2D" LOC = "C3" | PULLUP;
+
+NET "DATA[0]" LOC ="M5";	 # L0, el de la derecha
+NET "DATA[1]" LOC ="M11"; 	 # L1
+NET "DATA[2]" LOC ="P7";	 # L2
+NET "DATA[3]" LOC ="P6";	 # L3
+NET "DATA[4]" LOC ="N5";	 # L4
+NET "DATA[5]" LOC ="N4";	 # L5
+NET "DATA[6]" LOC ="P4";	 # L6
+NET "DATA[7]" LOC ="G1"; 	 # L7, el de la izquierda
+
