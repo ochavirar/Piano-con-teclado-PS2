@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    12:28:58 04/20/2022 
+// Create Date:    12:10:37 04/27/2022 
 // Design Name: 
 // Module Name:    Receiver 
 // Project Name: 
@@ -19,53 +19,62 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Receiver(
-    input ps2c,
-    input Rx,
-	 output [7:0]Data
+		input ps2d,
+		input CLK,
+		output reg[7:0] data
     );
-	 
-	 reg [7:0] code;
+
 	 reg [3:0] estado;
-		 
-	 assign Data = code;
-		 
-	 always @(posedge ps2c)
+	 reg [11:0] count;
+	 reg clkRedu;
+
+	 always @(posedge CLK) begin
+		count <= count + 1;
+		if(count == 1_786) begin 
+			clkRedu <= !clkRedu;
+			count <= 0;
+		end
+	 end
+
+	 always @(posedge clkRedu)
 	 begin 
 		case(estado)
 		0: begin
+		if(ps2d == 0)
 			estado <= 1;
-			code <= 0;
+		else 
+			estado <= 0;
 		end
 		1: begin
-			code[7] <= Rx;
+			data[0] <= ps2d;
 			estado <= 2;
 		end
 		2: begin
-			code[6] <= Rx;
+			data[1] <= ps2d;
 			estado <= 3;
 		end
 		3: begin
-			code[5] <= Rx;
+			data[2] <= ps2d;
 			estado <= 4;
 		end
 		4: begin
-			code[4] <= Rx;
+			data[3] <= ps2d;
 			estado <= 5;
 		end
 		5: begin
-			code[3] <= Rx;
+			data[4] <= ps2d;
 			estado <= 6;
 		end
 		6: begin
-			code[2] <= Rx;
+			data[5] <= ps2d;
 			estado <= 7;
 		end
 		7: begin
-			code[1] <= Rx;
+			data[6] <= ps2d;
 			estado <= 8;
 		end
 		8: begin
-			code[0] <= Rx;
+			data[7] <= ps2d;
 			estado <= 9;
 		end
 		9:
@@ -76,4 +85,3 @@ module Receiver(
 	 end
 
 endmodule
-

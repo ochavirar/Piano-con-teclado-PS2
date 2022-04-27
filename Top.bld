@@ -13,6 +13,15 @@ Done.
 Annotating constraints to design from ucf file "Top.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
+ERROR:ConstraintSystem:59 - Constraint <NET "speakerNote" LOC = "B2";>
+   [Top.ucf(6)]: NET "speakerNote" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "speakerNote" LOC = "B2";> [Top.ucf(6)]' could not be found and so the
+   Locate constraint will be removed.
+
 Done...
 
 Checking expanded design ...
@@ -25,13 +34,14 @@ Partition Implementation Status
 -------------------------------
 
 NGDBUILD Design Results Summary:
-  Number of errors:     0
-  Number of warnings:   0
+  Number of errors:     1
+  Number of warnings:   1
 
-Total memory usage is 4398104 kilobytes
+Total memory usage is 4398108 kilobytes
 
-Writing NGD file "Top.ngd" ...
-Total REAL time to NGDBUILD completion:  2 sec
-Total CPU time to NGDBUILD completion:   2 sec
+Total REAL time to NGDBUILD completion:  3 sec
+Total CPU time to NGDBUILD completion:   3 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
 
 Writing NGDBUILD log file "Top.bld"...

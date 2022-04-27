@@ -39,39 +39,16 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock PS2C
-------------+------------+------------+------------------+--------+
-            |Max Setup to|Max Hold to |                  | Clock  |
-Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
-------------+------------+------------+------------------+--------+
-PS2D        |    0.769(F)|    1.563(F)|PS2C_BUFGP        |   0.000|
-------------+------------+------------+------------------+--------+
-
-Clock PS2C to Pad
-------------+------------+------------------+--------+
-            | clk (edge) |                  | Clock  |
-Destination |   to PAD   |Internal Clock(s) | Phase  |
-------------+------------+------------------+--------+
-DATA<0>     |    8.712(F)|PS2C_BUFGP        |   0.000|
-DATA<1>     |    9.181(F)|PS2C_BUFGP        |   0.000|
-DATA<2>     |    9.335(F)|PS2C_BUFGP        |   0.000|
-DATA<3>     |    8.983(F)|PS2C_BUFGP        |   0.000|
-DATA<4>     |    8.490(F)|PS2C_BUFGP        |   0.000|
-DATA<5>     |    8.715(F)|PS2C_BUFGP        |   0.000|
-DATA<6>     |    8.828(F)|PS2C_BUFGP        |   0.000|
-DATA<7>     |    8.855(F)|PS2C_BUFGP        |   0.000|
-------------+------------+------------------+--------+
-
-Clock to Setup on destination clock PS2C
+Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-PS2C           |         |         |         |    1.977|
+clk            |    3.958|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Apr 25 21:55:06 2022 
+Analysis completed Wed Apr 27 12:18:27 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:

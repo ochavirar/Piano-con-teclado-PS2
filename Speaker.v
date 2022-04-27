@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    11:37:03 04/20/2022 
+// Create Date:    12:23:47 04/27/2022 
 // Design Name: 
-// Module Name:    Top 
+// Module Name:    Speaker 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,12 +18,25 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Top(
-		input PS2D,
-		input clk,
-		output [7:0] DATA
-    );
+module Speaker(
+	input clk,
+	input [7:0] note,
+	output speakerNote
+   );
+	 
+	 reg [3:0] estado;
+	 reg [11:0] count;
 
-	 Receiver receiver(.ps2d(PS2D), .CLK(clk), .data(DATA));
+	 always @(posedge CLK) begin
+		count <= count + 1;
+		if(count == 95_557) begin 
+			clkRedu <= !clkRedu;
+			count <= 0;
+		end
+	 end
+	 
+	 
+
+assign speakerNote = clkRedu;
 
 endmodule

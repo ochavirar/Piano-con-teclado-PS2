@@ -1,5 +1,9 @@
-NET "PS2C" LOC = "B1" | PULLUP | CLOCK_DEDICATED_ROUTE = FALSE;
-NET "PS2D" LOC = "C3" | PULLUP;
+#NET "PS2C" LOC = "B1" | CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PS2D" LOC = "C3";
+
+NET "clk" LOC = "B8";
+
+NET "speakerNote" LOC = "B2"; | DRIVE = 2 | PULLUP;
 
 NET "DATA[0]" LOC ="M5";	 # L0, el de la derecha
 NET "DATA[1]" LOC ="M11"; 	 # L1

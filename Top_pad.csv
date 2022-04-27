@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Mon Apr 25 21:55:04 2022
+#Wed Apr 27 12:18:23 2022
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -24,7 +24,7 @@ A2,,,TDI,,,,,,,,,,,,
 A3,,DIFFM,IO_L11P_0,UNUSED,,0,,,,,,,,,
 A4,,,NC,,,,,,,,,,,,
 A5,,,VCCAUX,,,,,,,,2.5,,,,
-A6,,,VCCO_0,,,0,,,,,any******,,,,
+A6,,,VCCO_0,,,0,,,,,2.50,,,,
 A7,,DIFFM,IO_L07P_0/GCLK10,UNUSED,,0,,,,,,,,,
 A8,,,GND,,,,,,,,,,,,
 A9,,DIFFS,IO_L05N_0/GCLK7,UNUSED,,0,,,,,,,,,
@@ -33,23 +33,23 @@ A11,,,VCCINT,,,,,,,,1.2,,,,
 A12,,,NC,,,,,,,,,,,,
 A13,,DIFFM,IO_L01P_0,UNUSED,,0,,,,,,,,,
 A14,,,TDO,,,,,,,,,,,,
-B1,PS2C,IBUF,IO_L01N_3,INPUT,LVCMOS25*,3,,,PULLUP,NONE,,LOCATED,NO,NONE,
+B1,,DIFFS,IO_L01N_3,UNUSED,,3,,,,,,,,,
 B2,,DIFFM,IO_L01P_3,UNUSED,,3,,,,,,,,,
 B3,,DIFFS,IO_L11N_0/HSWAP,UNUSED,,0,,,,,,,,,
 B4,,IBUF,IP,UNUSED,,0,,,,,,,,,
 B5,,DIFFM,IO_L09P_0,UNUSED,,0,,,,,,,,,
 B6,,DIFFM,IO_L08P_0,UNUSED,,0,,,,,,,,,
 B7,,DIFFS,IO_L07N_0/GCLK11,UNUSED,,0,,,,,,,,,
-B8,,DIFFMI,IP_L06P_0/GCLK8,UNUSED,,0,,,,,,,,,
+B8,clk,IBUF,IP_L06P_0/GCLK8,INPUT,LVCMOS25*,0,,,,NONE,,LOCATED,NO,NONE,
 B9,,DIFFM,IO_L05P_0/GCLK6,UNUSED,,0,,,,,,,,,
-B10,,,VCCO_0,,,0,,,,,any******,,,,
+B10,,,VCCO_0,,,0,,,,,2.50,,,,
 B11,,,NC,,,,,,,,,,,,
 B12,,,NC,,,,,,,,,,,,
 B13,,,TCK,,,,,,,,,,,,
 B14,,,TMS,,,,,,,,,,,,
 C1,,,NC,,,,,,,,,,,,
 C2,,DIFFS,IO_L02N_3,UNUSED,,3,,,,,,,,,
-C3,PS2D,IBUF,IO_L02P_3,INPUT,LVCMOS25*,3,,,PULLUP,NONE,,LOCATED,NO,NONE,
+C3,PS2D,IBUF,IO_L02P_3,INPUT,LVCMOS25*,3,,,,NONE,,LOCATED,NO,NONE,
 C4,,,NC,,,,,,,,,,,,
 C5,,DIFFS,IO_L09N_0,UNUSED,,0,,,,,,,,,
 C6,,DIFFS,IO_L08N_0/VREF_0,UNUSED,,0,,,,,,,,,
