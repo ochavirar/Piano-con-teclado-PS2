@@ -21,9 +21,11 @@
 module Top(
 		input PS2D,
 		input clk,
-		output [7:0] DATA
+		output [7:0] DATA,
+		output NOTE
     );
-
-	 Receiver receiver(.ps2d(PS2D), .CLK(clk), .data(DATA));
-
+	 wire [11:0] nota;
+	
+	 Receiver receiver(.ps2d(PS2D), .CLK(clk),.FinalNote(nota));
+	 Speaker speaker(.clk(CLK),.Frecuencia(nota),.speakerNote(NOTE));
 endmodule

@@ -20,16 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Speaker(
 	input clk,
-	input [7:0] note,
+	input Frecuencia,
 	output speakerNote
    );
 	 
+	 reg clkRedu;
 	 reg [3:0] estado;
 	 reg [11:0] count;
 
-	 always @(posedge CLK) begin
+	 always @(posedge clk) begin
 		count <= count + 1;
-		if(count == 95_557) begin 
+		if(count == Frecuencia) begin 
 			clkRedu <= !clkRedu;
 			count <= 0;
 		end

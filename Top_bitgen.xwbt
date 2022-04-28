@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\ochav\OneDrive - ITESO\Cuarto semestre\Fundamentos de sistemas digitales\Piano con teclado PS2\Piano-con-teclado-PS2\Top.ncd
-OUTFILE=C:\Users\ochav\OneDrive - ITESO\Cuarto semestre\Fundamentos de sistemas digitales\Piano con teclado PS2\Piano-con-teclado-PS2\Top.bit
+INFILE=C:\Users\che_v\OneDrive\Documentos\git\Piano-con-teclado-PS2\Top.ncd
+OUTFILE=C:\Users\che_v\OneDrive\Documentos\git\Piano-con-teclado-PS2\Top.bit
 FAMILY=Spartan3E
 PART=xc3s100e-5cp132
-WORKINGDIR=C:\Users\ochav\OneDrive - ITESO\Cuarto semestre\Fundamentos de sistemas digitales\Piano con teclado PS2\Piano-con-teclado-PS2
+WORKINGDIR=C:\Users\che_v\OneDrive\Documentos\git\Piano-con-teclado-PS2
 LICENSE=WebPack
-USER_INFO=212384154_0_0_951
+USER_INFO=210784570_0_0_239

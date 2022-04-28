@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-04-27T12:15:26</DateModified>
+  <DateModified>2022-04-27T21:34:32</DateModified>
   <ModuleName>Top</ModuleName>
   <SummaryTimeStamp>2022-04-27T12:08:22</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/ochav/OneDrive - ITESO/Cuarto semestre/Fundamentos de sistemas digitales/Piano con teclado PS2/Piano-con-teclado-PS2/iseconfig/Top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/ochav/OneDrive - ITESO/Cuarto semestre/Fundamentos de sistemas digitales/Piano con teclado PS2/Piano-con-teclado-PS2\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/che_v/OneDrive/Documentos/git/Piano-con-teclado-PS2/iseconfig/Top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/che_v/OneDrive/Documentos/git/Piano-con-teclado-PS2\</ImplementationReportsDirectory>
   <DateInitialized>2022-04-20T11:37:04</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

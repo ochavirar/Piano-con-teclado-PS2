@@ -37,25 +37,18 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 
 Data Sheet report:
 -----------------
-All values displayed in nanoseconds (ns)
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
 
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    3.958|         |         |         |
----------------+---------+---------+---------+---------+
-
-
-Analysis completed Wed Apr 27 12:18:27 2022 
+Analysis completed Wed Apr 27 22:18:35 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4504 MB
+Peak Memory Usage: 4487 MB
 
 
 
