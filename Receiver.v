@@ -87,7 +87,25 @@ module Receiver(
 	 end
 	 
 	 always @(posedge clkRedu) begin
-		if(data == 8'h1C) //Do3
+	 
+	 	//CUARTA  OCTAVA
+		if(data == 8'h1Z) //Do4
+			Frec <= 95_555;
+		else if(data == 8'h22) //Re4
+			Frec <= 85_132;
+		else if (data == 8'h21) //Mi4
+			Frec <= 75_843;
+		else if (data == 8'h2A) //Fa4
+			Frec <= 71_586;
+		else if (data == 8'h32) //Sol4
+			Frec <= 63_776;
+		else if (data == 8'h31) //La4
+			Frec <= 56_818;
+		else if (data == 8'h3A) //Si4
+			Frec <= 50_620;
+			
+	 //TERCERA OCTAVA
+		else if(data == 8'h1C) //Do3
 			Frec <= 190_840;
 		else if(data == 8'h1B) //Re3
 			Frec <= 173_611;
@@ -95,6 +113,46 @@ module Receiver(
 			Frec <= 151_515;
 		else if (data == 8'h2B) //Fa3
 			Frec <= 142_857;
+		else if (data == 8'h34) //Sol3
+			Frec <= 127_551;
+		else if (data == 8'h33) //La3
+			Frec <= 113_636;
+		else if (data == 8'h3B) //Si3
+			Frec <= 101_239;
+			
+		//SEGUNDA OCTAVA 
+		
+		else if(data == 8'h15) //Do2
+			Frec <= 382_205;
+		else if(data == 8'h1D) //Re2
+			Frec <= 340_507;
+		else if (data == 8'h24) //Mi2
+			Frec <= 303_361;
+		else if (data == 8'h2D) //Fa2
+			Frec <= 286_336;
+		else if (data == 8'h2C) //Sol2
+			Frec <= 255_102;
+		else if (data == 8'h35) //La2
+			Frec <= 227_273;
+		else if (data == 8'h3C) //Si2
+			Frec <= 202_478;
+			
+		//PRIMERA  OCTAVA 
+		
+			else if(data == 8'h16) //Do1
+			Frec <= 764_526;
+		else if(data == 8'h1E) //Re1
+			Frec <= 681_013;
+		else if (data == 8'h26) //Mi1
+			Frec <= 606_796;
+		else if (data == 8'h25) //Fa1
+			Frec <= 572_737;
+		else if (data == 8'h2E) //Sol1
+			Frec <= 510_204;
+		else if (data == 8'h36) //La1
+			Frec <= 454_545;
+		else if (data == 8'h3D) //Si1
+			Frec <= 404_924;
 		else 
 			Frec <= 0;
 	 end
