@@ -1,3 +1,2 @@
-verilog work "Speaker.v"
 verilog work "Receiver.v"
 verilog work "Top.v"

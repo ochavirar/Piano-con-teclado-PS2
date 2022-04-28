@@ -21,11 +21,19 @@
 module Top(
 		input PS2D,
 		input clk,
-		output [7:0] DATA,
-		output NOTE
+		output reg NOTE
     );
-	 wire [11:0] nota;
-	
-	 Receiver receiver(.ps2d(PS2D), .CLK(clk),.FinalNote(nota));
-	 Speaker speaker(.clk(CLK),.Frecuencia(nota),.speakerNote(NOTE));
+	 wire[25:0] note;
+	 reg [25:0] count;
+	 Receiver receiver(.ps2d(PS2D), .CLK(clk), .FinalNote(note));
+	 
+	 always @(posedge clk) begin
+		begin
+			count <= count + 1;
+			if(count == note) begin
+				NOTE <= !NOTE; //Tooglear ClkRedu
+				count <= 0;
+			end
+		end
+	 end
 endmodule

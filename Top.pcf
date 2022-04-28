@@ -1,10 +1,11 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Apr 27 22:18:27 2022
+// Written by: Map P.20131013 on Thu Apr 28 00:04:01 2022
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk" LOCATE = SITE "B8" LEVEL 1;
-COMP "PS2D" LOCATE = SITE "C3" LEVEL 1;
 COMP "NOTE" LOCATE = SITE "B2" LEVEL 1;
+COMP "PS2D" LOCATE = SITE "C3" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
 SCHEMATIC END;
 

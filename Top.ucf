@@ -3,5 +3,5 @@ NET "PS2D" LOC = "C3";
 
 NET "clk" LOC = "B8";
 
-NET "NOTE" LOC = "B2" | DRIVE = 2 | PULLUP;
+NET "NOTE" LOC = "B2";
 

@@ -21,13 +21,13 @@
 module Receiver(
 		input ps2d,
 		input CLK,
-		output [11:0]FinalNote	
+		output [25:0]FinalNote	
     );
-	 reg [11:0] Frec;
+	 reg [25:0] Frec;
 	 reg[7:0] data;
 
 	 reg [3:0] estado;
-	 reg [11:0] count;
+	 reg [25:0] count;
 	 reg clkRedu;
 
 	 always @(posedge CLK) begin
@@ -42,10 +42,10 @@ module Receiver(
 	 begin 
 		case(estado)
 		0: begin
-		if(ps2d == 0)
-			estado <= 1;
-		else 
-			estado <= 0;
+			if(ps2d == 0)
+				estado <= 1;
+			else
+				estado <= 0;
 		end
 		1: begin
 			data[0] <= ps2d;
@@ -86,18 +86,18 @@ module Receiver(
 		endcase
 	 end
 	 
-	 
-	
-
-	always @(posedge CLK) 
-		begin
-			case(data[7:0])
-				8'h1C: begin
-						 Frec <= 95_557;
-					
-						 end
-			
-				endcase
-		end
+	 always @(posedge clkRedu) begin
+		if(data == 8'h1C) //Do3
+			Frec <= 190_840;
+		else if(data == 8'h1B) //Re3
+			Frec <= 173_611;
+		else if (data == 8'h23) //Mi3
+			Frec <= 151_515;
+		else if (data == 8'h2B) //Fa3
+			Frec <= 142_857;
+		else 
+			Frec <= 0;
+	 end
+		
 	assign FinalNote = Frec;
 endmodule

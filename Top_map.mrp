@@ -9,22 +9,33 @@ Target Device  : xc3s100e
 Target Package : cp132
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Apr 27 22:18:26 2022
+Mapped Date    : Thu Apr 28 00:04:00 2022
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    7
+Number of warnings:    0
 Logic Utilization:
+  Number of Slice Flip Flops:            80 out of   1,920    4%
+  Number of 4 input LUTs:                36 out of   1,920    1%
 Logic Distribution:
-    Number of Slices containing only related logic:       0 out of       0   0%
-    Number of Slices containing unrelated logic:          0 out of       0   0%
+  Number of occupied Slices:             61 out of     960    6%
+    Number of Slices containing only related logic:      61 out of      61 100%
+    Number of Slices containing unrelated logic:          0 out of      61   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:          86 out of   1,920    4%
+    Number used as logic:                36
+    Number used as a route-thru:         50
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
   Number of bonded IOBs:                  3 out of      83    3%
+  Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                0.00
+Average Fanout of Non-Clock Nets:                2.36
 
-Peak Memory Usage:  4401 MB
+Peak Memory Usage:  4402 MB
 Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 
@@ -67,27 +78,9 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:MapLib:23 - Short on signal NOTE detected.
-WARNING:MapLib:23 - Short on signal NOTE detected.
-WARNING:MapLib:23 - Short on signal NOTE detected.
-WARNING:MapLib:23 - Short on signal NOTE detected.
-WARNING:MapLib:23 - Short on signal NOTE detected.
-WARNING:PhysDesignRules:367 - The signal <clk_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <PS2D_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network DATA<7> has no load.
-INFO:LIT:395 - The above info message is repeated 9 more times for the following
-   (max. 5 shown):
-   DATA<6>,
-   DATA<5>,
-   DATA<4>,
-   DATA<3>,
-   DATA<2>
-   To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
@@ -95,16 +88,18 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   1 block(s) removed
-   1 block(s) optimized away
+   2 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
-Unused block "NOTE_PULLUP" (PULLUP) removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
 GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
 
 Section 6 - IOB Properties
 --------------------------
@@ -113,7 +108,7 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| NOTE                               | IOB              | OUTPUT    | LVCMOS25             |       | 2        | SLOW |              |          | 0 / 0    |
+| NOTE                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | PS2D                               | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | clk                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
