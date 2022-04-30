@@ -21,17 +21,18 @@
 module Top(
 		input PS2D,
 		input clk,
-		output reg NOTE
+		output reg NOTEF,
+		input PS2C
     );
 	 wire[25:0] note;
 	 reg [25:0] count;
-	 Receiver receiver(.ps2d(PS2D), .CLK(clk), .FinalNote(note));
+	 Receiver receiver(.ps2d(PS2D), .CLK(PS2C), .FinalNote(note));
 	 
 	 always @(posedge clk) begin
 		begin
 			count <= count + 1;
 			if(count == note) begin
-				NOTE <= !NOTE; //Tooglear ClkRedu
+				NOTEF <= !NOTEF; //Tooglear ClkRedu
 				count <= 0;
 			end
 		end

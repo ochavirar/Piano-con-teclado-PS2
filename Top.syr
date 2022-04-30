@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Reading design: Top.prj
 
@@ -124,11 +124,9 @@ Analyzing hierarchy for module <Receiver> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <Top>.
-WARNING:Xst:863 - "Top.v" line 24: Name conflict (<note> and <NOTE>, renaming note as note_rnm0).
 Module <Top> is correct for synthesis.
  
 Analyzing module <Receiver> in library <work>.
-WARNING:Xst:864 - "Receiver.v" line 92: Comparisons to 'X' or 'Z' are treated as always false.
 Module <Receiver> is correct for synthesis.
  
 
@@ -145,22 +143,19 @@ INFO:Xst:2117 - HDL ADVISOR - Mux Selector <estado> of Case statement line 43 wa
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
     Using one-hot encoding for signal <estado>.
-    Found 1-bit register for signal <clkRedu>.
-    Found 26-bit up counter for signal <count>.
     Found 8-bit register for signal <data>.
     Found 10-bit register for signal <estado>.
-    Found 26-bit register for signal <Frec>.
+    Found 20-bit register for signal <Frec>.
     Summary:
-	inferred   1 Counter(s).
-	inferred  45 D-type flip-flop(s).
+	inferred  38 D-type flip-flop(s).
 Unit <Receiver> synthesized.
 
 
 Synthesizing Unit <Top>.
     Related source file is "Top.v".
-    Found 1-bit register for signal <NOTE>.
+    Found 1-bit register for signal <NOTEF>.
     Found 26-bit up counter for signal <count>.
-    Found 26-bit comparator equal for signal <count$cmp_eq0000> created at line 33.
+    Found 26-bit comparator equal for signal <count$cmp_eq0000> created at line 34.
     Summary:
 	inferred   1 Counter(s).
 	inferred   1 D-type flip-flop(s).
@@ -172,12 +167,12 @@ Unit <Top> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 2
- 26-bit up counter                                     : 2
-# Registers                                            : 12
- 1-bit register                                        : 10
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 11
+ 1-bit register                                        : 9
  10-bit register                                       : 1
- 26-bit register                                       : 1
+ 20-bit register                                       : 1
 # Comparators                                          : 1
  26-bit comparator equal                               : 1
 
@@ -187,18 +182,15 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <Frec_20> in Unit <receiver> is equivalent to the following 5 FFs/Latches, which will be removed : <Frec_21> <Frec_22> <Frec_23> <Frec_24> <Frec_25> 
-WARNING:Xst:1710 - FF/Latch <Frec_20> (without init value) has a constant value of 0 in block <receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2404 -  FFs/Latches <Frec<25:20>> (without init value) have a constant value of 0 in block <Receiver>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 2
- 26-bit up counter                                     : 2
-# Registers                                            : 40
- Flip-Flops                                            : 40
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 39
+ Flip-Flops                                            : 39
 # Comparators                                          : 1
  26-bit comparator equal                               : 1
 
@@ -214,7 +206,8 @@ Optimizing unit <Receiver> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 12.
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 11.
+FlipFlop receiver/data_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -222,8 +215,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 92
- Flip-Flops                                            : 92
+# Registers                                            : 66
+ Flip-Flops                                            : 66
 
 =========================================================================
 
@@ -249,34 +242,35 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 3
+# IOs                              : 4
 
 Cell Usage :
-# BELS                             : 328
+# BELS                             : 263
 #      GND                         : 1
-#      INV                         : 4
-#      LUT1                        : 50
-#      LUT2                        : 13
-#      LUT2_D                      : 1
-#      LUT2_L                      : 5
-#      LUT3                        : 15
-#      LUT3_D                      : 3
-#      LUT3_L                      : 4
-#      LUT4                        : 82
-#      LUT4_D                      : 4
-#      LUT4_L                      : 13
-#      MUXCY                       : 70
-#      MUXF5                       : 10
+#      INV                         : 2
+#      LUT1                        : 25
+#      LUT2                        : 18
+#      LUT2_D                      : 4
+#      LUT2_L                      : 4
+#      LUT3                        : 18
+#      LUT3_D                      : 1
+#      LUT3_L                      : 8
+#      LUT4                        : 85
+#      LUT4_D                      : 3
+#      LUT4_L                      : 18
+#      MUXCY                       : 38
+#      MUXF5                       : 11
 #      VCC                         : 1
-#      XORCY                       : 52
-# FlipFlops/Latches                : 92
-#      FD                          : 10
-#      FDE                         : 10
-#      FDR                         : 53
-#      FDS                         : 19
+#      XORCY                       : 26
+# FlipFlops/Latches                : 66
+#      FD_1                        : 10
+#      FDE                         : 1
+#      FDE_1                       : 9
+#      FDR                         : 26
+#      FDR_1                       : 1
+#      FDS_1                       : 19
 # Clock Buffers                    : 2
-#      BUFG                        : 1
-#      BUFGP                       : 1
+#      BUFGP                       : 2
 # IO Buffers                       : 2
 #      IBUF                        : 1
 #      OBUF                        : 1
@@ -287,11 +281,11 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                      100  out of    960    10%  
- Number of Slice Flip Flops:             92  out of   1920     4%  
- Number of 4 input LUTs:                194  out of   1920    10%  
- Number of IOs:                           3
- Number of bonded IOBs:                   3  out of     83     3%  
+ Number of Slices:                       97  out of    960    10%  
+ Number of Slice Flip Flops:             66  out of   1920     3%  
+ Number of 4 input LUTs:                186  out of   1920     9%  
+ Number of IOs:                           4
+ Number of bonded IOBs:                   4  out of     83     4%  
  Number of GCLKs:                         2  out of     24     8%  
 
 ---------------------------
@@ -315,8 +309,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 54    |
-receiver/clkRedu1                  | BUFG                   | 38    |
+clk                                | BUFGP                  | 27    |
+PS2C                               | BUFGP                  | 39    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -327,8 +321,8 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 5.629ns (Maximum Frequency: 177.637MHz)
-   Minimum input arrival time before clock: 2.805ns
+   Minimum period: 5.990ns (Maximum Frequency: 166.955MHz)
+   Minimum input arrival time before clock: 2.848ns
    Maximum output required time after clock: 4.063ns
    Maximum combinational path delay: No path found
 
@@ -339,7 +333,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 4.783ns (frequency: 209.052MHz)
-  Total number of paths / destination ports: 2108 / 108
+  Total number of paths / destination ports: 1054 / 54
 -------------------------------------------------------------------------
 Delay:               4.783ns (Levels of Logic = 14)
   Source:            count_0 (FF)
@@ -372,64 +366,64 @@ Delay:               4.783ns (Levels of Logic = 14)
                                        (66.5% logic, 33.5% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'receiver/clkRedu1'
-  Clock period: 5.629ns (frequency: 177.637MHz)
-  Total number of paths / destination ports: 593 / 57
+Timing constraint: Default period analysis for Clock 'PS2C'
+  Clock period: 5.990ns (frequency: 166.955MHz)
+  Total number of paths / destination ports: 644 / 58
 -------------------------------------------------------------------------
-Delay:               5.629ns (Levels of Logic = 3)
-  Source:            receiver/data_7 (FF)
-  Destination:       receiver/Frec_11 (FF)
-  Source Clock:      receiver/clkRedu1 rising
-  Destination Clock: receiver/clkRedu1 rising
+Delay:               5.990ns (Levels of Logic = 3)
+  Source:            receiver/data_6 (FF)
+  Destination:       receiver/Frec_9 (FF)
+  Source Clock:      PS2C falling
+  Destination Clock: PS2C falling
 
-  Data Path: receiver/data_7 to receiver/Frec_11
+  Data Path: receiver/data_6 to receiver/Frec_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             12   0.514   0.969  receiver/data_7 (receiver/data_7)
-     LUT2:I0->O           10   0.612   0.753  receiver/Frec_and00001 (receiver/Frec_and0000)
-     LUT4_D:I3->O          2   0.612   0.383  receiver/Frec_mux0000<6>21 (receiver/N87)
-     LUT4:I3->O            2   0.612   0.380  receiver/Frec_mux0000<14>31 (receiver/N28)
-     FDS:S                     0.795          receiver/Frec_11
+     FDE_1:C->Q           18   0.514   1.060  receiver/data_6 (receiver/data_6)
+     LUT3:I0->O           11   0.612   0.823  receiver/Frec_mux0000<14>61 (receiver/N46)
+     LUT3:I2->O            7   0.612   0.605  receiver/Frec_mux0000<18>36 (receiver/N32)
+     LUT4:I3->O            1   0.612   0.357  receiver/Frec_mux0000<3>21 (receiver/N31)
+     FDS_1:S                   0.795          receiver/Frec_9
     ----------------------------------------
-    Total                      5.629ns (3.145ns logic, 2.484ns route)
-                                       (55.9% logic, 44.1% route)
+    Total                      5.990ns (3.145ns logic, 2.845ns route)
+                                       (52.5% logic, 47.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'receiver/clkRedu1'
-  Total number of paths / destination ports: 10 / 10
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PS2C'
+  Total number of paths / destination ports: 11 / 11
 -------------------------------------------------------------------------
-Offset:              2.805ns (Levels of Logic = 2)
+Offset:              2.848ns (Levels of Logic = 2)
   Source:            PS2D (PAD)
   Destination:       receiver/estado_0 (FF)
-  Destination Clock: receiver/clkRedu1 rising
+  Destination Clock: PS2C falling
 
   Data Path: PS2D to receiver/estado_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            10   1.106   0.819  PS2D_IBUF (PS2D_IBUF)
+     IBUF:I->O            11   1.106   0.862  PS2D_IBUF (PS2D_IBUF)
      LUT2:I1->O            1   0.612   0.000  receiver/estado_mux0000<9>11 (receiver/estado_mux0000<9>1)
-     FDS:D                     0.268          receiver/estado_0
+     FDS_1:D                   0.268          receiver/estado_0
     ----------------------------------------
-    Total                      2.805ns (1.986ns logic, 0.819ns route)
-                                       (70.8% logic, 29.2% route)
+    Total                      2.848ns (1.986ns logic, 0.862ns route)
+                                       (69.7% logic, 30.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Offset:              4.063ns (Levels of Logic = 1)
-  Source:            NOTE (FF)
-  Destination:       NOTE (PAD)
+  Source:            NOTEF (FF)
+  Destination:       NOTEF (PAD)
   Source Clock:      clk rising
 
-  Data Path: NOTE to NOTE
+  Data Path: NOTEF to NOTEF
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.514   0.380  NOTE (NOTE_OBUF)
-     OBUF:I->O                 3.169          NOTE_OBUF (NOTE)
+     FDE:C->Q              2   0.514   0.380  NOTEF (NOTEF_OBUF)
+     OBUF:I->O                 3.169          NOTEF_OBUF (NOTEF)
     ----------------------------------------
     Total                      4.063ns (3.683ns logic, 0.380ns route)
                                        (90.6% logic, 9.4% route)
@@ -437,14 +431,14 @@ Offset:              4.063ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.74 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.81 secs
  
 --> 
 
-Total memory usage is 4513836 kilobytes
+Total memory usage is 4513232 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    4 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

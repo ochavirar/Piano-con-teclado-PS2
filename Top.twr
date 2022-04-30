@@ -39,24 +39,41 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
+Setup/Hold to clock PS2C
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+PS2D        |    1.294(F)|    2.116(F)|PS2C_BUFGP        |   0.000|
+------------+------------+------------+------------------+--------+
+
 Clock clk to Pad
 ------------+------------+------------------+--------+
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-NOTE        |    8.453(R)|clk_BUFGP         |   0.000|
+NOTEF       |    8.370(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
+
+Clock to Setup on destination clock PS2C
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+PS2C           |         |         |         |    4.927|
+---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.001|         |         |         |
+PS2C           |         |    6.887|         |         |
+clk            |    4.847|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Apr 28 15:16:30 2022 
+Analysis completed Fri Apr 29 18:57:56 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:

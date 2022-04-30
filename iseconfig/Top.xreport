@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-04-28T14:31:23</DateModified>
+  <DateModified>2022-04-29T16:50:12</DateModified>
   <ModuleName>Top</ModuleName>
   <SummaryTimeStamp>2022-04-27T23:36:26</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/che_v/OneDrive/Documentos/git/Piano-con-teclado-PS2/iseconfig/Top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/che_v/OneDrive/Documentos/git/Piano-con-teclado-PS2\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/cpere/Documents/Ingenieria en Sistemas Computacionales/CUARTOSEMESTRE/Fundamentos de Sistemas Digitales/Proyecto/Piano-con-teclado-PS2/iseconfig/Top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/cpere/Documents/Ingenieria en Sistemas Computacionales/CUARTOSEMESTRE/Fundamentos de Sistemas Digitales/Proyecto/Piano-con-teclado-PS2\</ImplementationReportsDirectory>
   <DateInitialized>2022-04-20T11:37:04</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

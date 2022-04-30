@@ -23,22 +23,22 @@ module Receiver(
 		input CLK,
 		output [25:0]FinalNote	
     );
-	 reg [25:0] Frec;
+	 reg [19:0] Frec;
 	 reg[7:0] data;
 
 	 reg [3:0] estado;
-	 reg [25:0] count;
-	 reg clkRedu;
+	 //reg [25:0] count;
+	 //reg clkRedu;
 
-	 always @(posedge CLK) begin
+	 /*always @(posedge CLK) begin
 		count <= count + 1;
-		if(count == 1_786) begin 
+		if(count == 1_787) begin 
 			clkRedu <= !clkRedu;
 			count <= 0;
 		end
-	 end
+	 end*/
 
-	 always @(posedge clkRedu)
+	 always @(negedge CLK)
 	 begin 
 		case(estado)
 		0: begin
@@ -86,10 +86,10 @@ module Receiver(
 		endcase
 	 end
 	 
-	 always @(posedge clkRedu) begin
+	 always @(negedge CLK) begin
 	 
 	 	//CUARTA  OCTAVA
-		if(data == 8'h1Z) //Do4
+		if(data == 8'h1A) //Do4
 			Frec <= 95_555;
 		else if(data == 8'h22) //Re4
 			Frec <= 85_132;

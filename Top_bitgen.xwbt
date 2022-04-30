@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\che_v\OneDrive\Documentos\git\Piano-con-teclado-PS2\Top.ncd
-OUTFILE=C:\Users\che_v\OneDrive\Documentos\git\Piano-con-teclado-PS2\Top.bit
+INFILE=C:\Users\cpere\Documents\Ingenieria en Sistemas Computacionales\CUARTOSEMESTRE\Fundamentos de Sistemas Digitales\Proyecto\Piano-con-teclado-PS2\Top.ncd
+OUTFILE=C:\Users\cpere\Documents\Ingenieria en Sistemas Computacionales\CUARTOSEMESTRE\Fundamentos de Sistemas Digitales\Proyecto\Piano-con-teclado-PS2\Top.bit
 FAMILY=Spartan3E
 PART=xc3s100e-5cp132
-WORKINGDIR=C:\Users\che_v\OneDrive\Documentos\git\Piano-con-teclado-PS2
+WORKINGDIR=C:\Users\cpere\Documents\Ingenieria en Sistemas Computacionales\CUARTOSEMESTRE\Fundamentos de Sistemas Digitales\Proyecto\Piano-con-teclado-PS2
 LICENSE=WebPack
 USER_INFO=210784570_0_0_239
