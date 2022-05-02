@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Apr 29 18:57:50 2022
+Mon May 02 10:20:15 2022
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -40,7 +40,7 @@ B4||IBUF|IP|UNUSED||0|||||||||
 B5||DIFFM|IO_L09P_0|UNUSED||0|||||||||
 B6||DIFFM|IO_L08P_0|UNUSED||0|||||||||
 B7||DIFFS|IO_L07N_0/GCLK11|UNUSED||0|||||||||
-B8|clk|IBUF|IP_L06P_0/GCLK8|INPUT|LVCMOS25*|0||||NONE||LOCATED|NO|NONE|
+B8|clkB|IBUF|IP_L06P_0/GCLK8|INPUT|LVCMOS25*|0||||NONE||LOCATED|NO|NONE|
 B9||DIFFM|IO_L05P_0/GCLK6|UNUSED||0|||||||||
 B10|||VCCO_0|||0|||||2.50||||
 B11|||NC||||||||||||

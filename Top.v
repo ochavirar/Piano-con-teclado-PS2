@@ -20,15 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Top(
 		input PS2D,
-		input clk,
+		input clkB,
 		output reg NOTEF,
 		input PS2C
     );
 	 wire[25:0] note;
 	 reg [25:0] count;
-	 Receiver receiver(.ps2d(PS2D), .CLK(PS2C), .FinalNote(note));
+	 Receiver receiver(.ps2d(PS2D), .CLK(PS2C), .clk2(clkB), .FinalNote(note));
 	 
-	 always @(posedge clk) begin
+	 always @(posedge clkB) begin
 		begin
 			count <= count + 1;
 			if(count == note) begin

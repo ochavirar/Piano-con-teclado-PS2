@@ -21,6 +21,7 @@
 module Receiver(
 		input ps2d,
 		input CLK,
+		input clk2,
 		output [25:0]FinalNote	
     );
 	 reg [19:0] Frec;
@@ -86,7 +87,7 @@ module Receiver(
 		endcase
 	 end
 	 
-	 always @(negedge CLK) begin
+	 always @(posedge clk2) begin
 	 
 	 	//CUARTA  OCTAVA
 		if(data == 8'h1A) //Do4

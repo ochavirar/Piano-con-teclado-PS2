@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.38 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.63 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.38 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.64 secs
  
 --> Reading design: Top.prj
 
@@ -138,7 +138,7 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <Receiver>.
     Related source file is "Receiver.v".
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <estado> of Case statement line 43 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <estado> of Case statement line 44 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <estado> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
@@ -207,7 +207,6 @@ Optimizing unit <Receiver> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 11.
-FlipFlop receiver/data_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -215,8 +214,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 66
- Flip-Flops                                            : 66
+# Registers                                            : 65
+ Flip-Flops                                            : 65
 
 =========================================================================
 
@@ -245,30 +244,24 @@ Design Statistics
 # IOs                              : 4
 
 Cell Usage :
-# BELS                             : 263
+# BELS                             : 256
 #      GND                         : 1
 #      INV                         : 2
 #      LUT1                        : 25
-#      LUT2                        : 18
-#      LUT2_D                      : 4
-#      LUT2_L                      : 4
-#      LUT3                        : 18
-#      LUT3_D                      : 1
-#      LUT3_L                      : 8
-#      LUT4                        : 85
-#      LUT4_D                      : 3
-#      LUT4_L                      : 18
+#      LUT2                        : 9
+#      LUT3                        : 24
+#      LUT4                        : 103
 #      MUXCY                       : 38
-#      MUXF5                       : 11
+#      MUXF5                       : 27
 #      VCC                         : 1
 #      XORCY                       : 26
-# FlipFlops/Latches                : 66
-#      FD_1                        : 10
+# FlipFlops/Latches                : 65
+#      FD_1                        : 8
 #      FDE                         : 1
-#      FDE_1                       : 9
+#      FDE_1                       : 8
 #      FDR                         : 26
 #      FDR_1                       : 1
-#      FDS_1                       : 19
+#      FDS_1                       : 21
 # Clock Buffers                    : 2
 #      BUFGP                       : 2
 # IO Buffers                       : 2
@@ -281,9 +274,9 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                       97  out of    960    10%  
- Number of Slice Flip Flops:             66  out of   1920     3%  
- Number of 4 input LUTs:                186  out of   1920     9%  
+ Number of Slices:                       90  out of    960     9%  
+ Number of Slice Flip Flops:             65  out of   1920     3%  
+ Number of 4 input LUTs:                163  out of   1920     8%  
  Number of IOs:                           4
  Number of bonded IOBs:                   4  out of     83     4%  
  Number of GCLKs:                         2  out of     24     8%  
@@ -309,8 +302,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 27    |
-PS2C                               | BUFGP                  | 39    |
+clkB                               | BUFGP                  | 47    |
+PS2C                               | BUFGP                  | 18    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -321,8 +314,8 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 5.990ns (Maximum Frequency: 166.955MHz)
-   Minimum input arrival time before clock: 2.848ns
+   Minimum period: 9.277ns (Maximum Frequency: 107.793MHz)
+   Minimum input arrival time before clock: 2.805ns
    Maximum output required time after clock: 4.063ns
    Maximum combinational path delay: No path found
 
@@ -331,22 +324,22 @@ Timing Detail:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.783ns (frequency: 209.052MHz)
-  Total number of paths / destination ports: 1054 / 54
+Timing constraint: Default period analysis for Clock 'clkB'
+  Clock period: 9.277ns (frequency: 107.793MHz)
+  Total number of paths / destination ports: 1594 / 54
 -------------------------------------------------------------------------
-Delay:               4.783ns (Levels of Logic = 14)
-  Source:            count_0 (FF)
+Delay:               4.639ns (Levels of Logic = 14)
+  Source:            receiver/Frec_1 (FF)
   Destination:       count_0 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
+  Source Clock:      clkB falling
+  Destination Clock: clkB rising
 
-  Data Path: count_0 to count_0
+  Data Path: receiver/Frec_1 to count_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.514   0.532  count_0 (count_0)
-     LUT4:I0->O            1   0.612   0.000  Mcompar_count_cmp_eq0000_lut<0> (Mcompar_count_cmp_eq0000_lut<0>)
+     FDS_1:C->Q            1   0.514   0.387  receiver/Frec_1 (receiver/Frec_1)
+     LUT4:I2->O            1   0.612   0.000  Mcompar_count_cmp_eq0000_lut<0> (Mcompar_count_cmp_eq0000_lut<0>)
      MUXCY:S->O            1   0.404   0.000  Mcompar_count_cmp_eq0000_cy<0> (Mcompar_count_cmp_eq0000_cy<0>)
      MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<1> (Mcompar_count_cmp_eq0000_cy<1>)
      MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<2> (Mcompar_count_cmp_eq0000_cy<2>)
@@ -362,38 +355,36 @@ Delay:               4.783ns (Levels of Logic = 14)
      MUXCY:CI->O          27   0.289   1.072  Mcompar_count_cmp_eq0000_cy<12> (Mcompar_count_cmp_eq0000_cy<12>)
      FDR:R                     0.795          count_0
     ----------------------------------------
-    Total                      4.783ns (3.180ns logic, 1.603ns route)
-                                       (66.5% logic, 33.5% route)
+    Total                      4.639ns (3.180ns logic, 1.459ns route)
+                                       (68.6% logic, 31.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'PS2C'
-  Clock period: 5.990ns (frequency: 166.955MHz)
-  Total number of paths / destination ports: 644 / 58
+  Clock period: 1.926ns (frequency: 519.224MHz)
+  Total number of paths / destination ports: 19 / 19
 -------------------------------------------------------------------------
-Delay:               5.990ns (Levels of Logic = 3)
-  Source:            receiver/data_6 (FF)
-  Destination:       receiver/Frec_9 (FF)
+Delay:               1.926ns (Levels of Logic = 1)
+  Source:            receiver/estado_0 (FF)
+  Destination:       receiver/estado_0 (FF)
   Source Clock:      PS2C falling
   Destination Clock: PS2C falling
 
-  Data Path: receiver/data_6 to receiver/Frec_9
+  Data Path: receiver/estado_0 to receiver/estado_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE_1:C->Q           18   0.514   1.060  receiver/data_6 (receiver/data_6)
-     LUT3:I0->O           11   0.612   0.823  receiver/Frec_mux0000<14>61 (receiver/N46)
-     LUT3:I2->O            7   0.612   0.605  receiver/Frec_mux0000<18>36 (receiver/N32)
-     LUT4:I3->O            1   0.612   0.357  receiver/Frec_mux0000<3>21 (receiver/N31)
-     FDS_1:S                   0.795          receiver/Frec_9
+     FDS_1:C->Q            2   0.514   0.532  receiver/estado_0 (receiver/estado_0)
+     LUT2:I0->O            1   0.612   0.000  receiver/estado_mux0000<9>11 (receiver/estado_mux0000<9>1)
+     FDS_1:D                   0.268          receiver/estado_0
     ----------------------------------------
-    Total                      5.990ns (3.145ns logic, 2.845ns route)
-                                       (52.5% logic, 47.5% route)
+    Total                      1.926ns (1.394ns logic, 0.532ns route)
+                                       (72.4% logic, 27.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'PS2C'
-  Total number of paths / destination ports: 11 / 11
+  Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              2.848ns (Levels of Logic = 2)
+Offset:              2.805ns (Levels of Logic = 2)
   Source:            PS2D (PAD)
   Destination:       receiver/estado_0 (FF)
   Destination Clock: PS2C falling
@@ -402,21 +393,21 @@ Offset:              2.848ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            11   1.106   0.862  PS2D_IBUF (PS2D_IBUF)
+     IBUF:I->O            10   1.106   0.819  PS2D_IBUF (PS2D_IBUF)
      LUT2:I1->O            1   0.612   0.000  receiver/estado_mux0000<9>11 (receiver/estado_mux0000<9>1)
      FDS_1:D                   0.268          receiver/estado_0
     ----------------------------------------
-    Total                      2.848ns (1.986ns logic, 0.862ns route)
-                                       (69.7% logic, 30.3% route)
+    Total                      2.805ns (1.986ns logic, 0.819ns route)
+                                       (70.8% logic, 29.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clkB'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Offset:              4.063ns (Levels of Logic = 1)
   Source:            NOTEF (FF)
   Destination:       NOTEF (PAD)
-  Source Clock:      clk rising
+  Source Clock:      clkB rising
 
   Data Path: NOTEF to NOTEF
                                 Gate     Net
@@ -432,11 +423,11 @@ Offset:              4.063ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.81 secs
+Total CPU time to Xst completion: 10.69 secs
  
 --> 
 
-Total memory usage is 4513232 kilobytes
+Total memory usage is 4513208 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

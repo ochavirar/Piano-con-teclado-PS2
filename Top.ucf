@@ -1,7 +1,7 @@
 #NET "PS2C" LOC = "B1" | CLOCK_DEDICATED_ROUTE = FALSE;
 NET "PS2D" LOC = "C3";
 
-NET "clk" LOC = "B8";
+NET "clkB" LOC = "B8";
 
 NET "NOTEF" LOC = "B2";
 

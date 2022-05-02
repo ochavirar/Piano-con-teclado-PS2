@@ -9,7 +9,7 @@ Target Device  : xc3s100e
 Target Package : cp132
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Fri Apr 29 18:57:22 2022
+Mapped Date    : Mon May 02 10:19:57 2022
 
 Mapping design into LUTs...
 Running directed packing...
@@ -24,16 +24,16 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:            79 out of   1,920    4%
-  Number of 4 input LUTs:               147 out of   1,920    7%
+  Number of Slice Flip Flops:            65 out of   1,920    3%
+  Number of 4 input LUTs:               141 out of   1,920    7%
 Logic Distribution:
-  Number of occupied Slices:            116 out of     960   12%
-    Number of Slices containing only related logic:     116 out of     116 100%
-    Number of Slices containing unrelated logic:          0 out of     116   0%
+  Number of occupied Slices:            101 out of     960   10%
+    Number of Slices containing only related logic:     101 out of     101 100%
+    Number of Slices containing unrelated logic:          0 out of     101   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         172 out of   1,920    8%
-    Number used as logic:               147
-    Number used as a route-thru:         25
+  Total Number of 4 input LUTs:         167 out of   1,920    8%
+    Number used as logic:               141
+    Number used as a route-thru:         26
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -41,11 +41,11 @@ Logic Distribution:
   Number of bonded IOBs:                  4 out of      83    4%
   Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                3.56
+Average Fanout of Non-Clock Nets:                3.86
 
 Peak Memory Usage:  4400 MB
-Total REAL time to MAP completion:  2 secs 
-Total CPU time to MAP completion:   2 secs 
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   3 secs 
 
 NOTES:
 
