@@ -39,41 +39,24 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock PS2C
-------------+------------+------------+------------------+--------+
-            |Max Setup to|Max Hold to |                  | Clock  |
-Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
-------------+------------+------------+------------------+--------+
-PS2D        |   -0.236(F)|    2.268(F)|PS2C_BUFGP        |   0.000|
-------------+------------+------------+------------------+--------+
-
-Clock clkB to Pad
+Clock clk to Pad
 ------------+------------+------------------+--------+
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-NOTEF       |    8.034(R)|clkB_BUFGP        |   0.000|
+NOTEF       |    8.381(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
-Clock to Setup on destination clock PS2C
+Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-PS2C           |         |         |         |    1.946|
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock clkB
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-PS2C           |         |         |         |   10.627|
-clkB           |    5.754|    5.337|         |         |
+clk            |    5.088|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon May 02 10:20:20 2022 
+Analysis completed Mon May 02 16:27:31 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:

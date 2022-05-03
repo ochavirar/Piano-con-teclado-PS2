@@ -21,25 +21,24 @@
 module Receiver(
 		input ps2d,
 		input CLK,
-		input clk2,
 		output [25:0]FinalNote	
     );
 	 reg [19:0] Frec;
 	 reg[7:0] data;
 
 	 reg [3:0] estado;
-	 //reg [25:0] count;
-	 //reg clkRedu;
+	 reg [25:0] count;
+	 reg clkRedu;
 
-	 /*always @(posedge CLK) begin
+	 always @(posedge CLK) begin
 		count <= count + 1;
-		if(count == 1_787) begin 
+		if(count == 1_786) begin 
 			clkRedu <= !clkRedu;
 			count <= 0;
 		end
-	 end*/
+	 end
 
-	 always @(negedge CLK)
+	 always @(posedge clkRedu)
 	 begin 
 		case(estado)
 		0: begin
@@ -87,7 +86,7 @@ module Receiver(
 		endcase
 	 end
 	 
-	 always @(posedge clk2) begin
+	 always @(posedge clkRedu) begin
 	 
 	 	//CUARTA  OCTAVA
 		if(data == 8'h1A) //Do4

@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon May 02 10:20:15 2022
+Mon May 02 16:27:26 2022
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -34,14 +34,14 @@ Pinout by Pin Number:
 |A12       |           |         |NC                       |         |           |              |          |         |           |         |         |          |           |                |
 |A13       |           |DIFFM    |IO_L01P_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A14       |           |         |TDO                      |         |           |              |          |         |           |         |         |          |           |                |
-|B1        |PS2C       |IBUF     |IO_L01N_3                |INPUT    |LVCMOS25*  |3             |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
+|B1        |           |DIFFS    |IO_L01N_3                |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |B2        |NOTEF      |IOB      |IO_L01P_3                |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |B3        |           |DIFFS    |IO_L11N_0/HSWAP          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B4        |           |IBUF     |IP                       |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B5        |           |DIFFM    |IO_L09P_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B6        |           |DIFFM    |IO_L08P_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B7        |           |DIFFS    |IO_L07N_0/GCLK11         |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|B8        |clkB       |IBUF     |IP_L06P_0/GCLK8          |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|B8        |clk        |IBUF     |IP_L06P_0/GCLK8          |INPUT    |LVCMOS25*  |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |B9        |           |DIFFM    |IO_L05P_0/GCLK6          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B10       |           |         |VCCO_0                   |         |           |0             |          |         |           |         |2.50     |          |           |                |
 |B11       |           |         |NC                       |         |           |              |          |         |           |         |         |          |           |                |

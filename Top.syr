@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.63 secs
+Total CPU time to Xst completion: 0.39 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.64 secs
+Total CPU time to Xst completion: 0.39 secs
  
 --> Reading design: Top.prj
 
@@ -138,16 +138,19 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <Receiver>.
     Related source file is "Receiver.v".
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <estado> of Case statement line 44 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <estado> of Case statement line 43 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <estado> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
     Using one-hot encoding for signal <estado>.
+    Found 1-bit register for signal <clkRedu>.
+    Found 26-bit up counter for signal <count>.
     Found 8-bit register for signal <data>.
     Found 10-bit register for signal <estado>.
     Found 20-bit register for signal <Frec>.
     Summary:
-	inferred  38 D-type flip-flop(s).
+	inferred   1 Counter(s).
+	inferred  39 D-type flip-flop(s).
 Unit <Receiver> synthesized.
 
 
@@ -155,7 +158,7 @@ Synthesizing Unit <Top>.
     Related source file is "Top.v".
     Found 1-bit register for signal <NOTEF>.
     Found 26-bit up counter for signal <count>.
-    Found 26-bit comparator equal for signal <count$cmp_eq0000> created at line 34.
+    Found 26-bit comparator greatequal for signal <count$cmp_ge0000> created at line 33.
     Summary:
 	inferred   1 Counter(s).
 	inferred   1 D-type flip-flop(s).
@@ -167,14 +170,14 @@ Unit <Top> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 1
- 26-bit up counter                                     : 1
-# Registers                                            : 11
- 1-bit register                                        : 9
+# Counters                                             : 2
+ 26-bit up counter                                     : 2
+# Registers                                            : 12
+ 1-bit register                                        : 10
  10-bit register                                       : 1
  20-bit register                                       : 1
 # Comparators                                          : 1
- 26-bit comparator equal                               : 1
+ 26-bit comparator greatequal                          : 1
 
 =========================================================================
 
@@ -187,12 +190,12 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 1
- 26-bit up counter                                     : 1
-# Registers                                            : 39
- Flip-Flops                                            : 39
+# Counters                                             : 2
+ 26-bit up counter                                     : 2
+# Registers                                            : 40
+ Flip-Flops                                            : 40
 # Comparators                                          : 1
- 26-bit comparator equal                               : 1
+ 26-bit comparator greatequal                          : 1
 
 =========================================================================
 
@@ -206,7 +209,8 @@ Optimizing unit <Receiver> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 11.
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 13.
+FlipFlop receiver/data_4 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -214,8 +218,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 65
- Flip-Flops                                            : 65
+# Registers                                            : 93
+ Flip-Flops                                            : 93
 
 =========================================================================
 
@@ -241,29 +245,34 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 4
+# IOs                              : 3
 
 Cell Usage :
-# BELS                             : 256
+# BELS                             : 383
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 25
-#      LUT2                        : 9
-#      LUT3                        : 24
-#      LUT4                        : 103
-#      MUXCY                       : 38
-#      MUXF5                       : 27
+#      INV                         : 10
+#      LUT1                        : 50
+#      LUT2                        : 36
+#      LUT2_D                      : 5
+#      LUT2_L                      : 5
+#      LUT3                        : 22
+#      LUT3_D                      : 1
+#      LUT3_L                      : 8
+#      LUT4                        : 78
+#      LUT4_D                      : 3
+#      LUT4_L                      : 17
+#      MUXCY                       : 83
+#      MUXF5                       : 11
 #      VCC                         : 1
-#      XORCY                       : 26
-# FlipFlops/Latches                : 65
-#      FD_1                        : 8
-#      FDE                         : 1
-#      FDE_1                       : 8
-#      FDR                         : 26
-#      FDR_1                       : 1
-#      FDS_1                       : 21
+#      XORCY                       : 52
+# FlipFlops/Latches                : 93
+#      FD                          : 10
+#      FDE                         : 11
+#      FDR                         : 53
+#      FDS                         : 19
 # Clock Buffers                    : 2
-#      BUFGP                       : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
 # IO Buffers                       : 2
 #      IBUF                        : 1
 #      OBUF                        : 1
@@ -274,11 +283,11 @@ Device utilization summary:
 
 Selected Device : 3s100ecp132-5 
 
- Number of Slices:                       90  out of    960     9%  
- Number of Slice Flip Flops:             65  out of   1920     3%  
- Number of 4 input LUTs:                163  out of   1920     8%  
- Number of IOs:                           4
- Number of bonded IOBs:                   4  out of     83     4%  
+ Number of Slices:                      121  out of    960    12%  
+ Number of Slice Flip Flops:             93  out of   1920     4%  
+ Number of 4 input LUTs:                235  out of   1920    12%  
+ Number of IOs:                           3
+ Number of bonded IOBs:                   3  out of     83     3%  
  Number of GCLKs:                         2  out of     24     8%  
 
 ---------------------------
@@ -302,8 +311,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clkB                               | BUFGP                  | 47    |
-PS2C                               | BUFGP                  | 18    |
+clk                                | BUFGP                  | 54    |
+receiver/clkRedu1                  | BUFG                   | 39    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -314,8 +323,8 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 9.277ns (Maximum Frequency: 107.793MHz)
-   Minimum input arrival time before clock: 2.805ns
+   Minimum period: 5.975ns (Maximum Frequency: 167.358MHz)
+   Minimum input arrival time before clock: 2.848ns
    Maximum output required time after clock: 4.063ns
    Maximum combinational path delay: No path found
 
@@ -324,90 +333,105 @@ Timing Detail:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clkB'
-  Clock period: 9.277ns (frequency: 107.793MHz)
-  Total number of paths / destination ports: 1594 / 54
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.370ns (frequency: 186.220MHz)
+  Total number of paths / destination ports: 2810 / 108
 -------------------------------------------------------------------------
-Delay:               4.639ns (Levels of Logic = 14)
-  Source:            receiver/Frec_1 (FF)
+Delay:               5.370ns (Levels of Logic = 27)
+  Source:            count_0 (FF)
   Destination:       count_0 (FF)
-  Source Clock:      clkB falling
-  Destination Clock: clkB rising
+  Source Clock:      clk rising
+  Destination Clock: clk rising
 
-  Data Path: receiver/Frec_1 to count_0
+  Data Path: count_0 to count_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS_1:C->Q            1   0.514   0.387  receiver/Frec_1 (receiver/Frec_1)
-     LUT4:I2->O            1   0.612   0.000  Mcompar_count_cmp_eq0000_lut<0> (Mcompar_count_cmp_eq0000_lut<0>)
-     MUXCY:S->O            1   0.404   0.000  Mcompar_count_cmp_eq0000_cy<0> (Mcompar_count_cmp_eq0000_cy<0>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<1> (Mcompar_count_cmp_eq0000_cy<1>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<2> (Mcompar_count_cmp_eq0000_cy<2>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<3> (Mcompar_count_cmp_eq0000_cy<3>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<4> (Mcompar_count_cmp_eq0000_cy<4>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<5> (Mcompar_count_cmp_eq0000_cy<5>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<6> (Mcompar_count_cmp_eq0000_cy<6>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<7> (Mcompar_count_cmp_eq0000_cy<7>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<8> (Mcompar_count_cmp_eq0000_cy<8>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<9> (Mcompar_count_cmp_eq0000_cy<9>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<10> (Mcompar_count_cmp_eq0000_cy<10>)
-     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_eq0000_cy<11> (Mcompar_count_cmp_eq0000_cy<11>)
-     MUXCY:CI->O          27   0.289   1.072  Mcompar_count_cmp_eq0000_cy<12> (Mcompar_count_cmp_eq0000_cy<12>)
+     FDR:C->Q              2   0.514   0.449  count_0 (count_0)
+     LUT2:I1->O            1   0.612   0.000  Mcompar_count_cmp_ge0000_lut<0> (Mcompar_count_cmp_ge0000_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  Mcompar_count_cmp_ge0000_cy<0> (Mcompar_count_cmp_ge0000_cy<0>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<1> (Mcompar_count_cmp_ge0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<2> (Mcompar_count_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<3> (Mcompar_count_cmp_ge0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<4> (Mcompar_count_cmp_ge0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<5> (Mcompar_count_cmp_ge0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<6> (Mcompar_count_cmp_ge0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<7> (Mcompar_count_cmp_ge0000_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<8> (Mcompar_count_cmp_ge0000_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<9> (Mcompar_count_cmp_ge0000_cy<9>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<10> (Mcompar_count_cmp_ge0000_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<11> (Mcompar_count_cmp_ge0000_cy<11>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<12> (Mcompar_count_cmp_ge0000_cy<12>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<13> (Mcompar_count_cmp_ge0000_cy<13>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<14> (Mcompar_count_cmp_ge0000_cy<14>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<15> (Mcompar_count_cmp_ge0000_cy<15>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<16> (Mcompar_count_cmp_ge0000_cy<16>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<17> (Mcompar_count_cmp_ge0000_cy<17>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<18> (Mcompar_count_cmp_ge0000_cy<18>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<19> (Mcompar_count_cmp_ge0000_cy<19>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<20> (Mcompar_count_cmp_ge0000_cy<20>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<21> (Mcompar_count_cmp_ge0000_cy<21>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<22> (Mcompar_count_cmp_ge0000_cy<22>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<23> (Mcompar_count_cmp_ge0000_cy<23>)
+     MUXCY:CI->O           1   0.052   0.000  Mcompar_count_cmp_ge0000_cy<24> (Mcompar_count_cmp_ge0000_cy<24>)
+     MUXCY:CI->O          27   0.289   1.072  Mcompar_count_cmp_ge0000_cy<25> (count_cmp_ge0000)
      FDR:R                     0.795          count_0
     ----------------------------------------
-    Total                      4.639ns (3.180ns logic, 1.459ns route)
-                                       (68.6% logic, 31.4% route)
+    Total                      5.370ns (3.850ns logic, 1.520ns route)
+                                       (71.7% logic, 28.3% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'PS2C'
-  Clock period: 1.926ns (frequency: 519.224MHz)
-  Total number of paths / destination ports: 19 / 19
+Timing constraint: Default period analysis for Clock 'receiver/clkRedu1'
+  Clock period: 5.975ns (frequency: 167.358MHz)
+  Total number of paths / destination ports: 645 / 58
 -------------------------------------------------------------------------
-Delay:               1.926ns (Levels of Logic = 1)
-  Source:            receiver/estado_0 (FF)
-  Destination:       receiver/estado_0 (FF)
-  Source Clock:      PS2C falling
-  Destination Clock: PS2C falling
+Delay:               5.975ns (Levels of Logic = 3)
+  Source:            receiver/data_6 (FF)
+  Destination:       receiver/Frec_9 (FF)
+  Source Clock:      receiver/clkRedu1 rising
+  Destination Clock: receiver/clkRedu1 rising
 
-  Data Path: receiver/estado_0 to receiver/estado_0
+  Data Path: receiver/data_6 to receiver/Frec_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS_1:C->Q            2   0.514   0.532  receiver/estado_0 (receiver/estado_0)
-     LUT2:I0->O            1   0.612   0.000  receiver/estado_mux0000<9>11 (receiver/estado_mux0000<9>1)
-     FDS_1:D                   0.268          receiver/estado_0
+     FDE:C->Q             17   0.514   1.045  receiver/data_6 (receiver/data_6)
+     LUT3:I0->O           11   0.612   0.823  receiver/Frec_mux0000<14>61 (receiver/N46)
+     LUT3:I2->O            7   0.612   0.605  receiver/Frec_mux0000<18>36 (receiver/N32)
+     LUT4:I3->O            1   0.612   0.357  receiver/Frec_mux0000<3>21 (receiver/N31)
+     FDS:S                     0.795          receiver/Frec_9
     ----------------------------------------
-    Total                      1.926ns (1.394ns logic, 0.532ns route)
-                                       (72.4% logic, 27.6% route)
+    Total                      5.975ns (3.145ns logic, 2.830ns route)
+                                       (52.6% logic, 47.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'PS2C'
-  Total number of paths / destination ports: 10 / 10
+Timing constraint: Default OFFSET IN BEFORE for Clock 'receiver/clkRedu1'
+  Total number of paths / destination ports: 11 / 11
 -------------------------------------------------------------------------
-Offset:              2.805ns (Levels of Logic = 2)
+Offset:              2.848ns (Levels of Logic = 2)
   Source:            PS2D (PAD)
   Destination:       receiver/estado_0 (FF)
-  Destination Clock: PS2C falling
+  Destination Clock: receiver/clkRedu1 rising
 
   Data Path: PS2D to receiver/estado_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            10   1.106   0.819  PS2D_IBUF (PS2D_IBUF)
+     IBUF:I->O            11   1.106   0.862  PS2D_IBUF (PS2D_IBUF)
      LUT2:I1->O            1   0.612   0.000  receiver/estado_mux0000<9>11 (receiver/estado_mux0000<9>1)
-     FDS_1:D                   0.268          receiver/estado_0
+     FDS:D                     0.268          receiver/estado_0
     ----------------------------------------
-    Total                      2.805ns (1.986ns logic, 0.819ns route)
-                                       (70.8% logic, 29.2% route)
+    Total                      2.848ns (1.986ns logic, 0.862ns route)
+                                       (69.7% logic, 30.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clkB'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Offset:              4.063ns (Levels of Logic = 1)
   Source:            NOTEF (FF)
   Destination:       NOTEF (PAD)
-  Source Clock:      clkB rising
+  Source Clock:      clk rising
 
   Data Path: NOTEF to NOTEF
                                 Gate     Net
@@ -422,12 +446,12 @@ Offset:              4.063ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.69 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.86 secs
  
 --> 
 
-Total memory usage is 4513208 kilobytes
+Total memory usage is 4513260 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
